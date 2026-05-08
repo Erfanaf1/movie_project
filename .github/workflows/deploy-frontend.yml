@@ -28,8 +28,9 @@ jobs:
       - name: Deploy to Server via SCP
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.178.173.144.194 }}
-          username: ${{ secrets.erfan }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
           
           source: "frontend/dist/"
           target: "/home/erfan/frontend/"
