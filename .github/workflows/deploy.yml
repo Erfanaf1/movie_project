@@ -3,8 +3,7 @@ name: Build and Deploy Frontend
 on:
   push:
     branches: [ master ]
-    paths:
-      - 'Frontend/**'
+    
 
 jobs:
   build-and-deploy:
