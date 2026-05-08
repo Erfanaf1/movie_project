@@ -4,9 +4,7 @@ import Header from "./components/header/Header";
 function App() {
   return (
     <BrowserRouter>
-      <div className="bg-surface-925 min-h-screen pt-12 text-primary-300">
-        <Header />
-      </div>
+      <Header />
     </BrowserRouter>
   );
 }
