@@ -80,3 +80,8 @@
   --color-primary-900: #14532d;
   --color-primary-950: #052e16;
 }
+
+body {
+  background-color: var(--color-surface-925);
+  color: var(--color-primary-300);
+}
