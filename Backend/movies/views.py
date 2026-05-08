@@ -2,7 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status, generics
 from .models import Movie, Genre, UserToken
-from .serializers import MovieSerializer, GenreSerializer
+from .serializers import MoviesSerializer, GenresSerializer
 from .services import MovieAPIService
 
 
@@ -11,13 +11,13 @@ from .services import MovieAPIService
 class MovieListCreateView(generics.ListCreateAPIView):
     """لیست فیلم‌های ذخیره شده در دیتابیس محلی"""
     queryset = Movie.objects.all()
-    serializer_class = MovieSerializer
+    serializer_class = MoviesSerializer
 
 
 class MovieDetailView(generics.RetrieveUpdateDestroyAPIView):
     """جزئیات، ویرایش و حذف فیلم محلی"""
     queryset = Movie.objects.all()
-    serializer_class = MovieSerializer
+    serializer_class = MoviesSerializer
 
 
 # ========== ژانرها (محلی) ==========
@@ -25,7 +25,7 @@ class MovieDetailView(generics.RetrieveUpdateDestroyAPIView):
 class GenreListView(generics.ListAPIView):
     """لیست ژانرهای ذخیره شده در دیتابیس محلی"""
     queryset = Genre.objects.all()
-    serializer_class = GenreSerializer
+    serializer_class = GenresSerializer
 
 
 # ========== ارتباط با API خارجی ==========
@@ -152,7 +152,7 @@ def external_sync_movie(request):
     movie, created = MovieAPIService.sync_movie_to_db(movie_id)
     
     if movie:
-        serializer = MovieSerializer(movie)
+        serializer = MoviesSerializer(movie)
         return Response({
             'message': 'فیلم با موفقیت همگام‌سازی شد',
             'created': created,
@@ -167,7 +167,7 @@ def external_sync_genres(request):
     """همگام‌سازی همه ژانرها از API خارجی به دیتابیس محلی"""
     genres, count = MovieAPIService.sync_all_genres()
     
-    serializer = GenreSerializer(genres, many=True)
+    serializer = GenresSerializer(genres, many=True)
     return Response({
         'message': f'{count} ژانر با موفقیت همگام‌سازی شد',
         'genres': serializer.data
