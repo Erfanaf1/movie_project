@@ -2,10 +2,10 @@ from rest_framework import serializers
 from .models import Movie, Genre, UserToken
 
 
-class MovieSerializer(serializers.ModelSerializer):
+class MoviesSerializer(serializers.ModelSerializer):
     """سریالایزر برای مدل فیلم"""
     
-    # فیلد اضافی برای نمایش (اگه خواستی)
+    # فیلد اضافی برای نمایش
     is_watched = serializers.SerializerMethodField()
     
     class Meta:
@@ -23,7 +23,7 @@ class MovieSerializer(serializers.ModelSerializer):
         return obj.status == 'watched'
 
 
-class GenreSerializer(serializers.ModelSerializer):
+class GenresSerializer(serializers.ModelSerializer):
     """سریالایزر برای مدل ژانر"""
     
     class Meta:
