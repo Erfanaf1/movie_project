@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const NavItem = ({to , label}) => {
   return (
-    <Link>
-      
+    <Link to={to}>
+      <p>{label}</p>
     </Link>
   )
 }
