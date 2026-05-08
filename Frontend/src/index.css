@@ -85,3 +85,7 @@ body {
   background-color: var(--color-surface-925);
   color: var(--color-primary-300);
 }
+
+* {
+  box-sizing: border-box;
+}

@@ -15,6 +15,8 @@ const NavLinks = () => {
       {links.map(link => (
         <NavItem key={link.to} to={link.to} label={link.label} icon={link.icon} />
       ))}
+
+
     </nav>
   )
 }
