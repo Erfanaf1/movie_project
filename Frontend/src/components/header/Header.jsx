@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import NavLinks from "./NavLinks";
 import SearchBar from "./SearchBar";
 import Profile from "./Profile";
-import Favorite from "./favorite";
+import Favorite from "./Favorite";
 
 const Header = () => {
   return (
@@ -17,7 +17,7 @@ const Header = () => {
   <span className="text-primary-300 font-bold text-4xl cursor-pointer transition hover:text-primary-200 hover:[text-shadow:0_0_10px_rgba(74,222,128,0.6)]">لوگو فیلم</span>
 </Link>
       {/* logo and profile */}
-      <div className="flex gap-3 justify-between items-center">
+      <div className="flex gap-3 justify-between items-center shrink-0">
         {/* profile dropdown */}
         <SearchBar />
         <Favorite />
