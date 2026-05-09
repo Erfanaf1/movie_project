@@ -31,10 +31,4 @@ jobs:
           git config --local user.name "GitHub Action"
           git add Frontend/dist/ -f
           git commit -m "build frontend [skip ci]" || echo "No changes to commit"
-<<<<<<< HEAD
           git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git
-=======
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
->>>>>>> feature/header-ui
