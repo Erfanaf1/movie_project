@@ -3,8 +3,6 @@ name: Build Frontend and Push to Repo
 on:
   push:
     branches: [ master ]
-    paths:
-    
 
 jobs:
   build:
