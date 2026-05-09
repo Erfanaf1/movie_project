@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import NavLinks from "./NavLinks";
 import SearchBar from "./SearchBar";
 import Profile from "./Profile";
-import Favorite from "./favorite";
+import Favorite from "./Favorite";
 
 const Header = () => {
   return (
