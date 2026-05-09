@@ -10,7 +10,7 @@ const links = [
 
 const NavLinks = () => {
   return (
-    <nav className='flex gap-10'>
+    <nav className='flex gap-10 max-xl:gap-4'>
 
       {links.map(link => (
         <NavItem key={link.to} to={link.to} label={link.label} icon={link.icon} />

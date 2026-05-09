@@ -7,14 +7,14 @@ import Favorite from "./Favorite";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 flex justify-between items-center w-[80vw] mx-auto mt-20 px-12 py-4 rounded-2xl bg-surface-950 shadow-[0_0_30px_rgba(74,222,128,0.3),0_0_60px_rgba(74,222,128,0.1)]">
+    <header className="sticky top-0 z-50 flex justify-between items-center w-[80vw] max-xl:w-[90vw] max-lg:w-[96vw] mx-auto mt-20 px-12 max-xl:px-10 max-lg:px-6 py-4 rounded-2xl bg-surface-950 shadow-[0_0_30px_rgba(74,222,128,0.3),0_0_60px_rgba(74,222,128,0.1)]">
       {/* logo & navlinks */}
       <div className="flex justify-between items-center gap-20">
         <NavLinks />
       </div>
         {/* logo */}
         <Link to="/">
-  <span className="text-primary-300 font-bold text-4xl cursor-pointer transition hover:text-primary-200 hover:[text-shadow:0_0_10px_rgba(74,222,128,0.6)]">لوگو فیلم</span>
+  <span className="text-primary-300 font-bold text-4xl max-lg:text-3xl cursor-pointer transition hover:text-primary-200 hover:[text-shadow:0_0_10px_rgba(74,222,128,0.6)]">لوگو فیلم</span>
 </Link>
       {/* logo and profile */}
       <div className="flex gap-3 justify-between items-center shrink-0">
