@@ -1,24 +1,31 @@
-import React from 'react'
-import NavItem from './NavItem'
-import homeIcon from '../../assets/icons/home.svg'
-import moviesIcon from '../../assets/icons/movies.svg'
+import React from "react";
+import NavItem from "./NavItem";
+import homeIcon from "../../assets/icons/home.svg";
+import moviesIcon from "../../assets/icons/movies.svg";
 
 const links = [
-  { to: '/', label: 'صفحه اصلی' , icon: homeIcon },
-  { to: '/movies', label: 'فیلم ها' , icon : moviesIcon },
-]
+  { to: "/", label: "صفحه اصلی", icon: homeIcon },
+  { to: "/movies", label: "فیلم ها", icon: moviesIcon },
+];
 
 const NavLinks = () => {
   return (
-    <nav className='flex gap-10 max-xl:gap-4'>
+    <div>
+      {/* Desktop - icon text */}
+      <nav className="max-md:hidden flex gap-10 max-xl:gap-4">
+        {links.map((link) => (
+          <NavItem
+            key={link.to}
+            to={link.to}
+            label={link.label}
+            icon={link.icon}
+          />
+        ))}
+      </nav>
+      {/* Mobile - icon text */}
+      <div></div>
+    </div>
+  );
+};
 
-      {links.map(link => (
-        <NavItem key={link.to} to={link.to} label={link.label} icon={link.icon} />
-      ))}
-
-
-    </nav>
-  )
-}
-
-export default NavLinks
+export default NavLinks;
