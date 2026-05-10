@@ -23,7 +23,13 @@ const NavLinks = () => {
         ))}
       </nav>
       {/* Mobile - icon text */}
-      <div></div>
+      <div className="md:hidden">
+        <div>
+          {links.map((link) => (
+            <NavItem key={link.to} to={link.to} label={link.label} icon={link.icon} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
