@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavLinks from "./NavLinks";
-import SearchBar from "./SearchBar";
+import SearchBar from "./search/SearchBar";
 import Profile from "./Profile";
 import Favorite from "./Favorite";
 import menuIcon from "../../assets/icons/menu.svg";
